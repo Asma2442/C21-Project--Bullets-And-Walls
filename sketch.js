@@ -25,13 +25,11 @@ function setup() {
     wall=createSprite(1200, 200, thickness, height/2);  
 
     wall.shapeColor=color(230,230,230);
-  //wall.shapeColor=color(80,80,80)
 }
 
 
 function draw() {
   background(0);  
-  //bullet.sprite.collide(wall.sprite,calculateDeformation)
   if(hasCollided(bullet, wall))
   {
   	bullet.velocityX=0;
@@ -61,8 +59,8 @@ function draw() {
 
 function hasCollided(lbullet, lwall)
 {
-	bulletRightEdge=lbullet.x +lbullet.width;
-	wallLeftEdge=lwall.x;
+	bulletRightEdge=lbullet.x +lbullet.width/2;
+	wallLeftEdge=lwall.x - lwall.width/2 ;
 	if (bulletRightEdge>=wallLeftEdge)
 	{
 		return true
